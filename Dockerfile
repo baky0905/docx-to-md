@@ -1,5 +1,8 @@
 FROM ubuntu:latest
-RUN DEBIAN_FRONTEND="noninteractive" 
+ENV TZ=Europe/Oslo
+#RUN DEBIAN_FRONTEND="noninteractive" 
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 LABEL "com.github.actions.name"="docx to md generator"
 LABEL "com.github.actions.description"="Create mds files from docx."
 
