@@ -5,7 +5,7 @@ LABEL "com.github.actions.description"="Create mds files from docx."
 
 RUN apt-get update
 RUN apt-get -y install pandoc
-RUN apt-get -y install git
+#RUN apt-get -y install git
 #RUN apt-get -y install texlive-latex-base
 #RUN apt-get -y install texlive-fonts-recommended
 
