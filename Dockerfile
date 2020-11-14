@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
-RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends apt-utils pandoc git
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils pandoc git
 # Cleanup
 RUN  apt-get clean && \
   rm -rf /var/lib/apt
