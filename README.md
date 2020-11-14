@@ -1,4 +1,4 @@
-# docx to markdown action	
+# docx to markdown action.	
 
 This action will find any markdown, .docx, files and generate a .md file for each one. This action can be used in conjunction with a commit action to add the generated .md back to the repository. The example shows how to...
 
