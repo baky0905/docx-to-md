@@ -27,10 +27,10 @@ jobs:
       with:
         fetch-depth: 1
     - name: Create .pdfs
-      uses: baky0905/md-to-pdf@v0.1.1
+      uses: baky0905/docx-to-md@v0.1.1
       env: {
         # Use this parameter to determine where the generated .pdf(s) will be stored.
-        PDF_DIR: './pdfs'
+        PDF_DIR: './mds'
       }
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1.6.1
