@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
-LABEL "com.github.actions.name"="Markdown to PDF Generator"
-LABEL "com.github.actions.description"="Create PDF files from Markdown."
+LABEL "com.github.actions.name"="docx to md generator"
+LABEL "com.github.actions.description"="Create mds files from docx."
 
 RUN apt-get update
 RUN apt-get -y install pandoc
