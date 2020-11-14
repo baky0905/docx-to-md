@@ -30,7 +30,7 @@ jobs:
       uses: baky0905/docx-to-md@v0.1.1
       env: {
         # Use this parameter to determine where the generated .pdf(s) will be stored.
-        PDF_DIR: './mds'
+        MD_DIR: './mds'
       }
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1.6.1
