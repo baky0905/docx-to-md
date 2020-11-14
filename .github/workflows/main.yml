@@ -6,7 +6,7 @@ name: Convert PDF to Markdown
 # events but only for the master branch
 on:
   push:
-    paths:
+    pathst
     - '**.md'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -24,10 +24,14 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       with:
         fetch-depth: 1
-    - name: Create .mds
-      uses: baky0905/docx-to-md@v0.1.2
-      env: 
-        MD_DIR: './mds'
+    - name: run build.sh
+      run: |
+        bash build.sh 
+    - name: Copy file
+      uses: canastro/copy-action@0.0.2
+      with:
+        source: dist/**
+        target: src/**  
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1.6.1
       env:
