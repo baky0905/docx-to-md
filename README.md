@@ -1,10 +1,10 @@
-# Markdown to PDF Action	
+# docx to markdown Action	
 
-This action will find any markdown, .md, files and generate a .pdf file for each one. This action can be used in conjunction with a commit action to add the generated .pdf back to the repository. The example shows how to...
+This action will find any markdown, .docx, files and generate a .md file for each one. This action can be used in conjunction with a commit action to add the generated .md back to the repository. The example shows how to...
 
 1. Checkout the code 
-2. Convert all markdown files (.md) to .pdfs, **Note:** You can filter the paths to only run on certain file types.
-3. Open a PR back to the repo with the generated .pdfs. 
+2. Convert all word document (.docx) to .mds, **Note:** You can filter the paths to only run on certain file types.
+3. Open a PR back to the repo with the generated .mds. 
 
 This action uses the [pandoc](https://pandoc.org/) library installed on Ubuntu.
 
@@ -27,7 +27,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Create .pdfs
-      uses: scottypate/md-to-pdf@v0.1.1
+      uses: baky0905/md-to-pdf@v0.1.1
       env: {
         # Use this parameter to determine where the generated .pdf(s) will be stored.
         PDF_DIR: './pdfs'
@@ -37,9 +37,9 @@ jobs:
       env:
         # The token is built in to actions. No config required.
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COMMIT_MESSAGE: Add .pdf files.
-        PULL_REQUEST_TITLE: Add .pdf files.
-        PULL_REQUEST_BRANCH: pdf-add
-        PULL_REQUEST_BODY: :wave: Here are the .pdf files you requested.
-        PULL_REQUEST_REVIEWERS: scottypate
+        COMMIT_MESSAGE: Add .md files.
+        PULL_REQUEST_TITLE: Add .md files.
+        PULL_REQUEST_BRANCH: md-add
+        PULL_REQUEST_BODY: :wave: Here are the .md files you requested.
+        PULL_REQUEST_REVIEWERS: baky0905
 ```      
