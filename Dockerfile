@@ -1,6 +1,5 @@
-FROM ubuntu:18.04
-ENV TZ=Europe/Kiev
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+FROM ubuntu:latest
+ARG DEBIAN_FRONTEND=noninteractive
 
 LABEL "com.github.actions.name"="docx to md generator"
 LABEL "com.github.actions.description"="Create mds files from docx."
