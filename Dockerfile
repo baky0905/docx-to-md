@@ -1,14 +1,16 @@
-FROM ubuntu:latest
-ARG DEBIAN_FRONTEND=noninteractive
-
+FROM ubuntu:bionic
 LABEL "com.github.actions.name"="docx to md generator"
 LABEL "com.github.actions.description"="Create mds files from docx."
 
-RUN apt-get update
-RUN ln -fs /usr/share/zoneinfo/Europe/Oslo /etc/localtime
-RUN export DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y tzdata
-RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN export DEBIAN_FRONTEND=noninteractive; \
+    export DEBCONF_NONINTERACTIVE_SEEN=true; \
+    echo 'tzdata tzdata/Areas select Etc' | debconf-set-selections; \
+    echo 'tzdata tzdata/Zones/Etc select UTC' | debconf-set-selections; \
+    apt-get update -qqy \
+ && apt-get install -qqy --no-install-recommends \
+        tzdata \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 RUN apt-get -y install apt-utils pandoc git
 #RUN apt-get -y install texlive-latex-base
 #RUN apt-get -y install texlive-fonts-recommended
