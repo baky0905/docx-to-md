@@ -1,11 +1,11 @@
 FROM ubuntu:latest
-
+RUN DEBIAN_FRONTEND="noninteractive" 
 LABEL "com.github.actions.name"="docx to md generator"
 LABEL "com.github.actions.description"="Create mds files from docx."
 
 RUN apt-get update
 RUN apt-get -y install pandoc
-#RUN apt-get -y install git
+RUN apt-get -y install git
 #RUN apt-get -y install texlive-latex-base
 #RUN apt-get -y install texlive-fonts-recommended
 
