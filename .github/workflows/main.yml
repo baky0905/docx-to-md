@@ -25,7 +25,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Create .mds
-      uses: baky0905/docx-to-md@0.1.2
+      uses: baky0905/docx-to-md@v0.1.2
       env: 
         MD_DIR: './mds'
     - name: Create Pull Request
