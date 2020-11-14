@@ -30,7 +30,7 @@ jobs:
     - name: Copy file
       uses: canastro/copy-action@0.0.2
       with:
-        source: dist/**
+        source: ./**
         target: src/**  
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v1.6.1
